@@ -1,0 +1,85 @@
+@import url('../../Variables.module.scss');
+
+.testimonies {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--color-light-gray);
+
+    h2 {
+        font-family: var(--font-primary); /* Основной шрифт для заголовка */
+        font-size: 4rem;
+        font-weight: 300;
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .testimonyList {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem; /* Промежуток между карточками */
+        padding: 0 1rem;
+        max-width: 1200px; /* Ограничиваем максимальную ширину */
+        margin: 0 auto; /* Центрируем список на экране */
+    }
+
+    .testimony-item {
+        flex: 1 1 220px;
+        max-width: 240px; /* Ограничиваем ширину карточки */
+        padding: 1.5rem;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: center;
+
+        h3 {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        p {
+            // font-style: italic;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+    }
+
+    // Настройки для планшетов и ниже
+    @media (max-width: 768px) {
+        .testimonyList {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .testimony-item {
+            max-width: 90%;
+            padding: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+
+    // Настройки для мобильных устройств (480px и ниже)
+    @media (max-width: 480px) {
+        padding: 1.5rem 0.5rem;
+
+        .testimonyList {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimony-item {
+            max-width: 100%;
+            padding: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}

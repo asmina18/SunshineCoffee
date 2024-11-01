@@ -1,0 +1,98 @@
+@import url('../../Variables.module.scss');
+
+.cartContainer {
+  display: flex;
+  justify-content: center; // Центрирует карточки внутри контейнера
+  padding: 4rem 2rem; // Основные отступы сверху и снизу для контейнера
+  gap: 2rem; // Промежуток между карточками на больших экранах
+  text-align: center;
+  flex-wrap: wrap; // Разрешаем карточкам переноситься на новые строки
+  margin:0 auto ; // Центрирование самого контейнера
+  width: 100%;
+  border-bottom: 10px solid black; // Нижняя граница для визуального разделения секций
+  .itemCard {
+    display: grid;
+    gap: 1rem;
+    h3 {
+      font-family: var(--font-primary);
+      font-size: 4rem;
+      color: var(--color-dark-gray);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-family: var(--font-secondary);
+      font-size: 1rem;
+      color: var(--color-dark-gray);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover; // Обрезка изображения для заполнения блока
+        margin-top: 1rem;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Легкая тень вокруг изображения
+      }
+    }
+  }
+}
+
+// Адаптивные настройки для средних экранов (ширина меньше 1024px)
+@media (max-width: 1024px) {
+  .cartContainer {
+    gap: 2rem; // Уменьшение промежутка между карточками
+    padding: 2rem; // Меньшие отступы сверху и снизу
+  }
+
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+// Адаптивные настройки для маленьких экранов (ширина меньше 768px)
+@media (max-width: 768px) {
+  .cartContainer {
+    flex-direction: column; // Ставит карточки в столбик на маленьких экранах
+    align-items: center; // Центрирует карточки по горизонтали
+    padding: 1.5rem; // Уменьшенные отступы
+    gap: 1rem; // Меньший промежуток между карточками
+    // margin-top: 1rem; // Небольшой отступ сверху на маленьких экранах
+  }
+
+  .itemCard {
+    max-width: 100%; // Полная ширина на маленьких экранах
+    padding: 1.2rem;
+    margin: 0; // Убираем внешние отступы, если они заданы
+    text-align: center; // Центрирует текст внутри карточек
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1024px){
+  .itemCard{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

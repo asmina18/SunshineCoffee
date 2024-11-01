@@ -1,0 +1,140 @@
+@import url(../../Variables.module.scss);
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%; /* Полная ширина экрана */
+    position: relative; /* Фиксированное положение */
+    background-color:var(--color-black);
+    padding: 0 5%; /* Боковые отступы */
+    height: 100px; /* Фиксированная высота панели */
+    box-sizing: border-box;
+    // z-index: 1000;
+    transition: height 0.3s ease; /* Плавный переход высоты при смене устройства */
+
+  }
+  .iconButton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 10px; /* Consistent spacing between icons */
+  }
+
+
+  .centerContainer {
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease; /* Плавный переход при изменении смещения */
+    z-index: 2;
+  }
+
+  .title {
+    font-family: 'Licorice', cursive;
+    color:var( --color-light-gray);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-top: 20px; /* Дополнительный отступ сверху для отделения от логотипа */
+  }
+
+  .logoCircle {
+    background-color: var(--color-black); /* Исходный черный фон кружки */
+    border-radius: 50%;
+    padding: 20px;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    /* Эффект при наведении */
+    &:hover {
+        background-color: var(--color-warm-brown); /* Тёплый коричневый при наведении */
+        transform: scale(1.1); /* Легкое увеличение при наведении */
+    }
+
+    /* Эффект при нажатии */
+    &:active {
+        background-color: var(--color-warm-brown); /* Жжёный оранжевый при нажатии */
+        transform: scale(0.95); /* Легкое уменьшение при нажатии */
+    }
+}
+
+.logo {
+    width: 80px;
+    transition: transform 0.2s ease;
+}
+
+
+
+  .rightContainer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .locationButton {
+    font-family: 'Inika', serif;
+    color: #EFEFEF;
+    background: none;
+    border: 1px solid #EFEFEF;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+  }
+
+  .locationButton:hover {
+    background-color: #EFEFEF;
+    color: #111111;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease; /* Плавный эффект при наведении */
+  }
+
+  .icon:hover {
+    transform: scale(1.1); /* Легкое увеличение при наведении */
+  }
+
+  /* Мобильная версия */
+
+  // MOBIL
+  @media (max-width: 700px){
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw; /* Полная ширина экрана */
+      position: relative; /* Фиксированное положение */
+      background-color:var(--color-black);
+      padding: 0 5%; /* Боковые отступы */
+      height: 100px; /* Фиксированная высота панели */
+      // top: 0;
+      // left: 0;
+      box-sizing: border-box;
+      // z-index: 1000;
+      transition: height 0.3s ease; /* Плавный переход высоты при смене устройства */
+      // background-color: red;
+    }
+    .centerContainer {
+      left: 1rem;
+      top: -50%;
+      margin: 0;
+      transform: translateX(0);
+      transform: scale(0.5);
+    }
+
+  }
+

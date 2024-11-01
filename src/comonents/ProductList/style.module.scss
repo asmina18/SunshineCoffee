@@ -1,0 +1,183 @@
+@import url('../../Variables.module.scss');
+
+// Основной контейнер для списка продуктов
+.productListContainer {
+  text-align: center;
+  padding: 40px 20px;
+}
+h2 {
+  font-family: var(--font-primary);
+  font-size: 4rem; // Размер текста
+  color:var(--color-dark-gray); // Темно-серый цвет текста, как на примере
+  text-align: center; // Центрирование заголовка
+  margin: 20px 0; // Отступы сверху и снизу
+  font-weight: 400; // Обычная толщина текста (не полужирный)
+
+}
+// Сетка продуктов
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  // Адаптивная сетка для экранов меньше 768px
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  // Сетка для небольших экранов, например, мобильных (меньше 480px)
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+}
+
+// Карточка продукта
+.cardContainer {
+  border-radius: 12px;
+  padding: 20px;
+  background-color: var(--color-light-gray);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  // Адаптивные отступы для меньших экранов
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+}
+
+.productTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  color: var(--color-dark-gray);
+  margin: 10px 0 15px;
+  // font-weight: bold;
+  font-weight: 400;
+
+  // Уменьшаем размер шрифта на мобильных устройствах
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+}
+
+// Контейнер для изображения продукта
+.productImageContainer {
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+  height: 220px;
+
+  // Адаптивная высота изображения на мобильных устройствах
+  @media (max-width: 768px) {
+    height: 180px;
+  }
+
+  @media (max-width: 480px) {
+    height: 150px;
+  }
+}
+
+// Изображение продукта с эффектом увеличения
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.productInfo {
+  font-family: var(--font-secondary);
+  color: var(--color-dark-gray);
+  margin-top: 10px;
+
+  // Адаптивные отступы и размер шрифта на мобильных устройствах
+  @media (max-width: 480px) {
+    margin-top: 8px;
+  }
+}
+
+// Текст уровня обжарки
+.roastText {
+  font-size: 14px;
+  color: var(--color-dark-gray);
+  font-weight: bold;
+  display: inline; // В одну строку с точками уровня обжарки
+  margin-right: 5px;
+
+  // Уменьшаем размер шрифта на мобильных устройствах
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+}
+
+// Уровень обжарки с точками
+.roastLevelDots {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+
+  .dot {
+    font-size: 18px;
+
+    &.active {
+      color: var(--color-burnt-orange);
+    }
+
+    &.inactive {
+      color: #ddd;
+    }
+
+    // Уменьшаем размер точек на мобильных устройствах
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+}
+
+// Цена продукта
+.priceLabel {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-dark-gray);
+  margin: 8px 0;
+
+  // Уменьшаем размер шрифта на мобильных устройствах
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+// Кнопка "Добавить в корзину"
+.cartButton {
+  background-color: transparent;
+  color: var(--color-dark-gray);
+  border: 1px solid var(--color-dark-gray);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: var(--color-dark-gray);
+    color: #fff;
+  }
+
+  // Адаптивные отступы и размер шрифта на мобильных устройствах
+  @media (max-width: 480px) {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}

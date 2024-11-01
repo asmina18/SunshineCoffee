@@ -1,0 +1,85 @@
+@import url('../../Variables.module.scss');
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+    background-color: var(--color-dark-gray);
+    color: var(--color-light-gray);
+
+    .footerSection {
+        max-width: 200px;
+        text-align: left;
+
+        h3 {
+            font-size: 1rem;
+            font-weight: normal;
+            font-family: var(--font-secondary);
+            color: var(--color-light-gray);
+            margin-bottom: 1rem;
+        }
+
+        p, a {
+            font-size: 0.9rem;
+            font-family: var(--font-secondary);
+            color: var(--color-light-gray);
+            line-height: 1.5;
+            margin: 0.2rem 0;
+            text-decoration: none;
+
+            &:hover {
+                color: var(--color-light-gray);
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 0.2rem 0;
+            }
+        }
+    }
+
+    // Media query for tablets
+    @media (max-width: 768px) {
+        padding: 1rem;
+        justify-content: space-evenly; /* Center-align the sections more evenly */
+        .footerSection {
+            max-width: 150px; /* Slightly narrower on tablets for better spacing */
+            h3 {
+                font-size: 0.95rem;
+            }
+
+            p, a {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    // Media query for very small devices
+    @media (max-width: 480px) {
+        flex-direction: column; /* Stack sections vertically on very small screens */
+        align-items: center;
+        padding: 1rem 0;
+
+        .footerSection {
+            max-width: 100%; /* Full width but centered */
+            padding: 0 1rem; /* Side padding for readability */
+            text-align: center; /* Center-align content on mobile */
+            margin-bottom: 1rem;
+
+            h3 {
+                font-size: 1rem; /* Slightly larger for readability */
+                margin-bottom: 0.5rem;
+            }
+
+            p, a {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

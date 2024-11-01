@@ -1,0 +1,67 @@
+// src/components/cookie.module.scss
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); // Gennemsigtig sort baggrund
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out; // Fade-in effekt
+  }
+
+  .banner {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: slideUp 0.5s ease-out; // Slide-up animation
+  }
+
+  .text {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e6b800;
+    }
+  }
+
+  // Animationer
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }

@@ -1,0 +1,75 @@
+@import '../../Variables.module.scss';
+
+.header {
+  position: relative; // Заменяем абсолютное позиционирование на relative
+  width: 100%; // Полная ширина экрана
+  // max-width: 100vw;
+  // height: 50vh; // Высота 50% от экрана
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 2rem;
+  text-align: center;
+  color: var(--color-light-gray);
+  top: 0;
+  left: 0;
+  margin: 0; // Убираем отступы
+  border-bottom: 10px solid black;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.textContainer {
+  position: relative;
+  z-index: 2;
+  color: var(--color-light-gray);
+  text-align: center;
+  padding: 0;
+}
+
+.mainText {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+.subText {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin: 0;
+  margin-top: 0.3rem;
+  padding: 0 1rem;
+  line-height: 1.2;
+}
+
+/* Мобильная версия */
+@media (max-width: 767px) {
+  .header {
+    height: 50vh; // Меньшая высота на мобильных
+  }
+
+  .mainText {
+    font-size: 2.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .subText {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}
